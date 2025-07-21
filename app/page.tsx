@@ -16,7 +16,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <div className="w-24 h-24 mx-auto mb-8 rounded-full overflow-hidden border-4 border-primary-red flex items-center justify-center bg-primary-beige">
-              <img src="/images/bricklabs-logo.jpg" alt="BrickLabs Logo" className="w-full h-full object-cover" />
+              <img src="/images/bricklabs-logo.png" alt="BrickLabs Logo" className="w-full h-full object-cover" />
             </div>
             <h1 className="text-6xl font-bold text-gray-900 mb-6">
               Welcome to <span className="text-gradient">BrickLabs</span>
@@ -146,7 +146,16 @@ export default function Home() {
           <p className="text-xl text-gray-600 mb-12">Join millions of builders on TikTok</p>
           <div className="flex justify-center gap-8">
             <a href="https://www.tiktok.com/@bricklabclips" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-600 hover:text-primary-red transition-colors">
-              <span className="w-8 h-8 bg-black text-white rounded-full flex items-center justify-center text-sm font-bold">T</span>
+              <span className="w-8 h-8 flex items-center justify-center">
+                {/* TikTok SVG */}
+                <svg viewBox="0 0 48 48" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g>
+                    <path d="M33.5 6c.3 2.7 2.3 7.2 7.2 7.6v6.1c-2.1.2-4.2-.1-6.2-.9v13.2c0 7.2-5.1 12.3-12.3 12.3-2.5 0-4.8-.7-6.7-2v-7.1c1.4 1.2 3.2 2 5.2 2 3.5 0 6.3-2.8 6.3-6.3V6h6.5Z" fill="#25F4EE"/>
+                    <path d="M31.5 4v25.9c0 7.2-5.1 12.3-12.3 12.3-2.5 0-4.8-.7-6.7-2v-7.1c1.4 1.2 3.2 2 5.2 2 3.5 0 6.3-2.8 6.3-6.3V4h7.5Z" fill="#FE2C55"/>
+                    <path d="M25.5 4v25.9c0 3.5-2.8 6.3-6.3 6.3-2 0-3.8-.8-5.2-2V19.7h6.5v-6.1h-6.5V4h11.5Z" fill="#fff"/>
+                  </g>
+                </svg>
+              </span>
               <span>TikTok</span>
             </a>
           </div>
