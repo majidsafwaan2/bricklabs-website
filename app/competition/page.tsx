@@ -245,14 +245,13 @@ export default function Competition() {
                 {prizes.map((prize, index) => (
                   <div key={index} className="border border-gray-200 rounded-lg p-6">
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold ${
-                        index === 0 ? 'bg-yellow-500' :
-                        index === 1 ? 'bg-gray-400' :
-                        index === 2 ? 'bg-yellow-600' : 'bg-primary-red'
-                      }`}>
-                        {index + 1}
-                      </div>
-                      <h3 className="text-lg font-semibold">{prize.place}</h3>
+                      index === 0 ? 'bg-yellow-500' :
+                      index === 1 ? 'bg-gray-400' :
+                      index === 2 ? 'bg-yellow-600' : 'bg-primary-red'
+                    }`}>
+                      {index + 1}
                     </div>
+                    <h3 className="text-lg font-semibold">{prize.place}</h3>
                     <p className="text-xl font-bold text-primary-red mb-2">{prize.prize}</p>
                     <p className="text-gray-600">{prize.description}</p>
                   </div>
