@@ -103,7 +103,7 @@ export default function Home() {
               <div className="w-full h-48 bg-gray-200 rounded-lg mb-4"></div>
               <h3 className="text-xl font-semibold mb-2">Gearbox Mechanisms</h3>
               <p className="text-gray-600 mb-4">Learn about different gear ratios and mechanical advantage</p>
-              <Link href="/library/gearbox-mechanisms" className="text-primary-red font-semibold">
+              <Link href="/library/basic-gearbox-3-speeds" className="text-primary-red font-semibold">
                 Read More →
               </Link>
             </motion.div>
@@ -117,7 +117,7 @@ export default function Home() {
               <div className="w-full h-48 bg-gray-200 rounded-lg mb-4"></div>
               <h3 className="text-xl font-semibold mb-2">Pneumatic Systems</h3>
               <p className="text-gray-600 mb-4">Explore air pressure and fluid dynamics</p>
-              <Link href="/library/pneumatic-systems" className="text-primary-red font-semibold">
+              <Link href="/library/pneumatic-excavator-arm" className="text-primary-red font-semibold">
                 Read More →
               </Link>
             </motion.div>
@@ -131,7 +131,7 @@ export default function Home() {
               <div className="w-full h-48 bg-gray-200 rounded-lg mb-4"></div>
               <h3 className="text-xl font-semibold mb-2">Motor Control</h3>
               <p className="text-gray-600 mb-4">Master electronic motor programming</p>
-              <Link href="/library/motor-control" className="text-primary-red font-semibold">
+              <Link href="/library/differential-drive-robot" className="text-primary-red font-semibold">
                 Read More →
               </Link>
             </motion.div>
