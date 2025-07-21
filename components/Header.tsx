@@ -13,8 +13,8 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary-red rounded-lg flex items-center justify-center">
-              <div className="w-6 h-4 bg-white rounded-sm"></div>
+            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-red flex items-center justify-center bg-primary-beige">
+              <img src="/images/bricklabs-logo.png" alt="BrickLabs Logo" className="w-full h-full object-cover" />
             </div>
             <span className="text-2xl font-bold text-gray-900">BrickLabs</span>
           </Link>

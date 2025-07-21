@@ -244,8 +244,7 @@ export default function Competition() {
               <div className="grid md:grid-cols-2 gap-6">
                 {prizes.map((prize, index) => (
                   <div key={index} className="border border-gray-200 rounded-lg p-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold ${
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold ${
                         index === 0 ? 'bg-yellow-500' :
                         index === 1 ? 'bg-gray-400' :
                         index === 2 ? 'bg-yellow-600' : 'bg-primary-red'
@@ -294,8 +293,8 @@ export default function Competition() {
               <div className="card">
                 <h2 className="text-2xl font-bold mb-6">Submit Your Entry</h2>
                 
-                <form className="space-y-6">
-                  <div>
+                <form className="space-y-6 flex flex-col w-full">
+                  <div className="flex flex-col w-full">
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Full Name *
                     </label>
@@ -306,8 +305,7 @@ export default function Competition() {
                       placeholder="Enter your full name"
                     />
                   </div>
-
-                  <div>
+                  <div className="flex flex-col w-full">
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Email Address *
                     </label>
@@ -318,8 +316,7 @@ export default function Competition() {
                       placeholder="Enter your email address"
                     />
                   </div>
-
-                  <div>
+                  <div className="flex flex-col w-full">
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Age *
                     </label>
@@ -331,8 +328,7 @@ export default function Competition() {
                       placeholder="Enter your age"
                     />
                   </div>
-
-                  <div>
+                  <div className="flex flex-col w-full">
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Build Title *
                     </label>
@@ -343,8 +339,7 @@ export default function Competition() {
                       placeholder="Give your build a creative name"
                     />
                   </div>
-
-                  <div>
+                  <div className="flex flex-col w-full">
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Engineering Principles Used *
                     </label>
@@ -355,8 +350,7 @@ export default function Competition() {
                       placeholder="Describe the engineering principles demonstrated in your build"
                     />
                   </div>
-
-                  <div>
+                  <div className="flex flex-col w-full">
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Build Description *
                     </label>
@@ -367,8 +361,7 @@ export default function Competition() {
                       placeholder="Tell us about your build, what inspired it, and how it works"
                     />
                   </div>
-
-                  <div>
+                  <div className="flex flex-col w-full">
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Video Upload *
                     </label>
@@ -388,8 +381,7 @@ export default function Competition() {
                       />
                     </div>
                   </div>
-
-                  <div>
+                  <div className="flex flex-col w-full">
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Build Photos (Optional)
                     </label>
@@ -409,8 +401,7 @@ export default function Competition() {
                       />
                     </div>
                   </div>
-
-                  <div className="flex items-start gap-3">
+                  <div className="flex items-start gap-3 w-full">
                     <input
                       type="checkbox"
                       required
@@ -421,7 +412,6 @@ export default function Competition() {
                       to feature my submission on their website and social media channels.
                     </label>
                   </div>
-
                   <button
                     type="submit"
                     className="w-full btn-primary"

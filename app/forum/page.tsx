@@ -16,10 +16,74 @@ interface ForumPost {
   isSticky?: boolean
 }
 
+const samplePosts: ForumPost[] = [
+  {
+    id: '1',
+    title: 'My first gearbox build - need feedback!',
+    author: 'LegoBuilder123',
+    content: 'Just finished building my first gearbox following the library guide. It works but seems a bit noisy. Any tips?',
+    category: 'builds',
+    replies: 8,
+    views: 45,
+    likes: 12,
+    timestamp: '2 hours ago',
+    isSticky: true
+  },
+  {
+    id: '2',
+    title: 'Best motors for heavy lifting?',
+    author: 'TechMaster',
+    content: 'I\'m working on a crane project and need recommendations for motors that can handle heavy loads.',
+    category: 'help',
+    replies: 15,
+    views: 89,
+    likes: 23,
+    timestamp: '5 hours ago'
+  },
+  {
+    id: '3',
+    title: 'Competition submission tips',
+    author: 'CompetitionPro',
+    content: 'Here are some tips I learned from last year\'s competition that might help this year\'s participants.',
+    category: 'competition',
+    replies: 22,
+    views: 156,
+    likes: 34,
+    timestamp: '1 day ago',
+    isSticky: true
+  },
+  {
+    id: '4',
+    title: 'New pneumatic cylinder techniques',
+    author: 'PneumaticGuru',
+    content: 'I discovered some interesting ways to use pneumatic cylinders that aren\'t in the library yet.',
+    category: 'techniques',
+    replies: 6,
+    views: 67,
+    likes: 18,
+    timestamp: '2 days ago'
+  },
+  {
+    id: '5',
+    title: 'Where to buy specific Technic parts?',
+    author: 'PartsHunter',
+    content: 'Looking for some specific gears that aren\'t available in my local stores. Any online recommendations?',
+    category: 'parts',
+    replies: 12,
+    views: 78,
+    likes: 9,
+    timestamp: '3 days ago'
+  }
+]
+
 export default function Forum() {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [posts, setPosts] = useState(samplePosts)
+  const [newPost, setNewPost] = useState({ title: '', content: '', category: 'general' })
+  const [replyContent, setReplyContent] = useState('')
+  const [replyTo, setReplyTo] = useState<string | null>(null)
 
   const categories = [
     { id: 'all', name: 'All Topics', color: 'bg-gray-500' },
@@ -31,72 +95,47 @@ export default function Forum() {
     { id: 'parts', name: 'Parts & Sets', color: 'bg-indigo-500' }
   ]
 
-  const samplePosts: ForumPost[] = [
-    {
-      id: '1',
-      title: 'My first gearbox build - need feedback!',
-      author: 'LegoBuilder123',
-      content: 'Just finished building my first gearbox following the library guide. It works but seems a bit noisy. Any tips?',
-      category: 'builds',
-      replies: 8,
-      views: 45,
-      likes: 12,
-      timestamp: '2 hours ago',
-      isSticky: true
-    },
-    {
-      id: '2',
-      title: 'Best motors for heavy lifting?',
-      author: 'TechMaster',
-      content: 'I\'m working on a crane project and need recommendations for motors that can handle heavy loads.',
-      category: 'help',
-      replies: 15,
-      views: 89,
-      likes: 23,
-      timestamp: '5 hours ago'
-    },
-    {
-      id: '3',
-      title: 'Competition submission tips',
-      author: 'CompetitionPro',
-      content: 'Here are some tips I learned from last year\'s competition that might help this year\'s participants.',
-      category: 'competition',
-      replies: 22,
-      views: 156,
-      likes: 34,
-      timestamp: '1 day ago',
-      isSticky: true
-    },
-    {
-      id: '4',
-      title: 'New pneumatic cylinder techniques',
-      author: 'PneumaticGuru',
-      content: 'I discovered some interesting ways to use pneumatic cylinders that aren\'t in the library yet.',
-      category: 'techniques',
-      replies: 6,
-      views: 67,
-      likes: 18,
-      timestamp: '2 days ago'
-    },
-    {
-      id: '5',
-      title: 'Where to buy specific Technic parts?',
-      author: 'PartsHunter',
-      content: 'Looking for some specific gears that aren\'t available in my local stores. Any online recommendations?',
-      category: 'parts',
-      replies: 12,
-      views: 78,
-      likes: 9,
-      timestamp: '3 days ago'
-    }
-  ]
-
   const filteredPosts = samplePosts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          post.content.toLowerCase().includes(searchTerm.toLowerCase())
     const matchesCategory = selectedCategory === 'all' || post.category === selectedCategory
     return matchesSearch && matchesCategory
   })
+
+  const handleNewPost = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!newPost.title || !newPost.content) return
+    setPosts([
+      {
+        id: (Date.now()).toString(),
+        title: newPost.title,
+        author: 'You',
+        content: newPost.content,
+        category: newPost.category,
+        replies: 0,
+        views: 1,
+        likes: 0,
+        timestamp: 'just now',
+      },
+      ...posts,
+    ])
+    setNewPost({ title: '', content: '', category: 'general' })
+  }
+
+  const handleReply = (postId: string) => {
+    setReplyTo(postId)
+    setReplyContent('')
+  }
+
+  const submitReply = (postId: string) => {
+    setPosts(posts.map(post =>
+      post.id === postId
+        ? { ...post, replies: post.replies + 1 }
+        : post
+    ))
+    setReplyTo(null)
+    setReplyContent('')
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -161,9 +200,39 @@ export default function Forum() {
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-3">
+            {isLoggedIn && (
+              <form onSubmit={handleNewPost} className="mb-8 card">
+                <h3 className="text-lg font-semibold mb-2">New Post</h3>
+                <input
+                  type="text"
+                  value={newPost.title}
+                  onChange={e => setNewPost({ ...newPost, title: e.target.value })}
+                  placeholder="Title"
+                  className="input-field mb-2"
+                  required
+                />
+                <textarea
+                  value={newPost.content}
+                  onChange={e => setNewPost({ ...newPost, content: e.target.value })}
+                  placeholder="What's on your mind?"
+                  className="input-field mb-2"
+                  required
+                />
+                <select
+                  value={newPost.category}
+                  onChange={e => setNewPost({ ...newPost, category: e.target.value })}
+                  className="input-field mb-2"
+                >
+                  {categories.map(cat => (
+                    <option key={cat.id} value={cat.id}>{cat.name}</option>
+                  ))}
+                </select>
+                <button type="submit" className="btn-primary w-full">Post</button>
+              </form>
+            )}
             {/* Posts List */}
             <div className="bg-white rounded-lg shadow-sm border border-gray-200">
-              {filteredPosts.map((post) => (
+              {posts.map((post) => (
                 <div
                   key={post.id}
                   className={`p-6 border-b border-gray-200 last:border-b-0 hover:bg-gray-50 transition-colors ${
@@ -218,8 +287,23 @@ export default function Forum() {
                             <ThumbsUp className="w-4 h-4" />
                             {post.likes}
                           </span>
+                          {isLoggedIn && (
+                            <button onClick={() => handleReply(post.id)} className="text-primary-red ml-2">Reply</button>
+                          )}
                         </div>
                       </div>
+                      {replyTo === post.id && (
+                        <div className="mt-4">
+                          <textarea
+                            value={replyContent}
+                            onChange={e => setReplyContent(e.target.value)}
+                            placeholder="Write a reply..."
+                            className="input-field mb-2"
+                          />
+                          <button onClick={() => submitReply(post.id)} className="btn-secondary">Submit Reply</button>
+                          <button onClick={() => setReplyTo(null)} className="ml-2 text-gray-500">Cancel</button>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

@@ -29,30 +29,30 @@ export default function Sponsorship() {
   }
 
   const stats = [
-    { label: 'Social Media Followers', value: '50K+', icon: Users },
-    { label: 'Monthly Website Visitors', value: '25K+', icon: TrendingUp },
-    { label: 'Community Members', value: '1,200+', icon: Users },
-    { label: 'Average Engagement Rate', value: '8.5%', icon: BarChart3 }
+    { label: 'Monthly Views', value: '8 Million+', icon: TrendingUp },
+    { label: 'Followers', value: '10k+', icon: Users },
+    { label: 'Monthly Website Visitors', value: '40k+', icon: BarChart3 },
+    { label: 'Avg. Engagement Rate', value: '8.5%', icon: DollarSign }
   ]
 
   const opportunities = [
     {
       title: 'Social Media Sponsorship',
-      description: 'Sponsored posts on our YouTube, Instagram, and TikTok channels',
+      description: 'Sponsored posts on our TikTok channel',
       features: ['Product placement in build videos', 'Dedicated sponsored content', 'Brand mentions and tags', 'Performance analytics'],
       price: 'Starting at $500'
-    },
-    {
-      title: 'Competition Sponsorship',
-      description: 'Sponsor our "Build Your Dreams" competitions',
-      features: ['Brand integration in competition theme', 'Logo placement on all materials', 'Judging panel participation', 'Winner announcement features'],
-      price: 'Starting at $1,000'
     },
     {
       title: 'Library Content Sponsorship',
       description: 'Sponsor educational content in our build library',
       features: ['Branded tutorial videos', 'Product showcases', 'Educational partnerships', 'Long-term content visibility'],
       price: 'Starting at $750'
+    },
+    {
+      title: 'Competition Sponsorship',
+      description: 'Sponsor our "Build Your Dreams" competitions',
+      features: ['Brand integration in competition theme', 'Logo placement on all materials', 'Judging panel participation', 'Winner announcement features'],
+      price: 'Starting at $1,000'
     },
     {
       title: 'Community Partnership',
@@ -280,11 +280,11 @@ export default function Sponsorship() {
             <div className="mt-8 text-center">
               <p className="text-gray-600 mb-2">Or contact us directly:</p>
               <a 
-                href="mailto:example@gmail.com" 
+                href="mailto:majidsafwaan2@gmail.com" 
                 className="flex items-center justify-center gap-2 text-primary-red hover:text-red-700 font-semibold"
               >
                 <Mail className="w-5 h-5" />
-                example@gmail.com
+                majidsafwaan2@gmail.com
               </a>
             </div>
           </div>

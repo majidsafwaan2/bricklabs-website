@@ -11,8 +11,8 @@ export default function Footer() {
           {/* Company Info */}
           <div className="col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-primary-red rounded-lg flex items-center justify-center">
-                <div className="w-5 h-3 bg-white rounded-sm"></div>
+              <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-primary-red flex items-center justify-center bg-primary-beige">
+                <img src="/images/bricklabs-logo.png" alt="BrickLabs Logo" className="w-full h-full object-cover" />
               </div>
               <span className="text-xl font-bold">BrickLabs</span>
             </div>
@@ -21,13 +21,8 @@ export default function Footer() {
               engineers, and creators as we explore the principles of mechanics and engineering.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-primary-red transition-colors">
-                YouTube
-              </a>
-              <a href="#" className="text-gray-300 hover:text-primary-red transition-colors">
-                Instagram
-              </a>
-              <a href="#" className="text-gray-300 hover:text-primary-red transition-colors">
+              <a href="https://www.tiktok.com/@bricklabclips" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary-red transition-colors flex items-center gap-2">
+                <span className="w-6 h-6 bg-black text-white rounded-full flex items-center justify-center text-xs font-bold">T</span>
                 TikTok
               </a>
             </div>
@@ -62,6 +57,11 @@ export default function Footer() {
                   About
                 </Link>
               </li>
+              <li>
+                <Link href="/contact" className="text-gray-300 hover:text-primary-red transition-colors">
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -88,7 +88,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="mailto:example@gmail.com" className="text-gray-300 hover:text-primary-red transition-colors flex items-center">
+                <a href="mailto:majidsafwaan2@gmail.com" className="text-gray-300 hover:text-primary-red transition-colors flex items-center">
                   <Mail className="w-4 h-4 mr-2" />
                   Contact Us
                 </a>

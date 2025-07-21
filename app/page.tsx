@@ -15,8 +15,8 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="w-24 h-24 mx-auto mb-8 bg-primary-red rounded-lg flex items-center justify-center animate-bounce-slow">
-              <div className="w-16 h-8 bg-white rounded-sm"></div>
+            <div className="w-24 h-24 mx-auto mb-8 rounded-full overflow-hidden border-4 border-primary-red flex items-center justify-center bg-primary-beige">
+              <img src="/images/bricklabs-logo.png" alt="BrickLabs Logo" className="w-full h-full object-cover" />
             </div>
             <h1 className="text-6xl font-bold text-gray-900 mb-6">
               Welcome to <span className="text-gradient">BrickLabs</span>
@@ -143,18 +143,10 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-8">Follow Our Journey</h2>
-          <p className="text-xl text-gray-600 mb-12">Join thousands of builders on social media</p>
+          <p className="text-xl text-gray-600 mb-12">Join millions of builders on TikTok</p>
           <div className="flex justify-center gap-8">
-            <a href="#" className="flex items-center gap-2 text-gray-600 hover:text-primary-red transition-colors">
-              <Youtube className="w-8 h-8" />
-              <span>YouTube</span>
-            </a>
-            <a href="#" className="flex items-center gap-2 text-gray-600 hover:text-primary-red transition-colors">
-              <Instagram className="w-8 h-8" />
-              <span>Instagram</span>
-            </a>
-            <a href="#" className="flex items-center gap-2 text-gray-600 hover:text-primary-red transition-colors">
-              <span className="w-8 h-8 bg-black text-white rounded flex items-center justify-center text-sm font-bold">T</span>
+            <a href="https://www.tiktok.com/@bricklabclips" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-600 hover:text-primary-red transition-colors">
+              <span className="w-8 h-8 bg-black text-white rounded-full flex items-center justify-center text-sm font-bold">T</span>
               <span>TikTok</span>
             </a>
           </div>

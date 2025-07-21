@@ -4,6 +4,7 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Chatbot from '@/components/Chatbot'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,6 +26,9 @@ export default function RootLayout({
           <Header />
           <main className="flex-grow">
             {children}
+            <Link href="/contact" className="text-gray-700 hover:text-primary-red transition-colors">
+              Contact
+            </Link>
           </main>
           <Footer />
           <Chatbot />
