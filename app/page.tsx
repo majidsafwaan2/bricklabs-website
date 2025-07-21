@@ -16,7 +16,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <div className="w-24 h-24 mx-auto mb-8 rounded-full overflow-hidden border-4 border-primary-red flex items-center justify-center bg-primary-beige">
-              <img src="/images/bricklabs-logo.png" alt="BrickLabs Logo" className="w-full h-full object-cover" />
+              <img src="/images/bricklabs-logo.jpg" alt="BrickLabs Logo" className="w-full h-full object-cover" />
             </div>
             <h1 className="text-6xl font-bold text-gray-900 mb-6">
               Welcome to <span className="text-gradient">BrickLabs</span>
