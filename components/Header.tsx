@@ -14,7 +14,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-red flex items-center justify-center bg-primary-beige">
-              <img src="/images/bricklabs-logo.png" alt="BrickLabs Logo" className="w-full h-full object-cover" />
+              <img src="/images/bricklabs-logo.jpg" alt="BrickLabs Logo" className="w-full h-full object-cover" />
             </div>
             <span className="text-2xl font-bold text-gray-900">BrickLabs</span>
           </Link>
