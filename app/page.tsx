@@ -142,11 +142,11 @@ export default function Home() {
       {/* Social Media Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-8">Follow Our Journey</h2>
-          <p className="text-xl text-gray-600 mb-12">Join millions of builders on TikTok</p>
+          <h2 className="text-4xl font-bold mb-8">Check out our TikTok</h2>
+          <p className="text-xl text-gray-600 mb-12"></p>
           <div className="flex justify-center gap-8">
             <a href="https://www.tiktok.com/@bricklabclips" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-600 hover:text-primary-red transition-colors">
-              <span className="w-8 h-8 flex items-center justify-center">
+              <span className="w-8 h-8 flex items-center justify-center rounded-full bg-black">
                 {/* TikTok SVG */}
                 <svg viewBox="0 0 48 48" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g>

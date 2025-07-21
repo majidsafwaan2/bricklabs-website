@@ -81,7 +81,7 @@ export default function Competition() {
       {/* Navigation Tabs */}
       <div className="bg-white border-b border-gray-200">
         <div className="container mx-auto px-4">
-          <div className="flex space-x-8 ml-0 md:ml-8">
+          <div className="flex space-x-8 ml-0 md:ml-24">
             {[
               { id: 'overview', label: 'Overview', icon: Trophy },
               { id: 'rules', label: 'Rules & Guidelines', icon: FileText },
