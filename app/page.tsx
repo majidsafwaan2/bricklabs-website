@@ -142,17 +142,17 @@ export default function Home() {
       {/* Social Media Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-8">Check out our TikTok</h2>
-          <p className="text-xl text-gray-600 mb-12"></p>
+          <h2 className="text-4xl font-bold mb-8">Follow Our Journey</h2>
+          <p className="text-xl text-gray-600 mb-12">Check us out on TikTok</p>
           <div className="flex justify-center gap-8">
             <a href="https://www.tiktok.com/@bricklabclips" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-600 hover:text-primary-red transition-colors">
-              <span className="w-8 h-8 flex items-center justify-center rounded-full bg-black">
-                {/* TikTok SVG */}
-                <svg viewBox="0 0 48 48" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <span className="w-10 h-10 flex items-center justify-center rounded-full bg-black">
+                {/* Official TikTok SVG */}
+                <svg width="24" height="24" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g>
-                    <path d="M33.5 6c.3 2.7 2.3 7.2 7.2 7.6v6.1c-2.1.2-4.2-.1-6.2-.9v13.2c0 7.2-5.1 12.3-12.3 12.3-2.5 0-4.8-.7-6.7-2v-7.1c1.4 1.2 3.2 2 5.2 2 3.5 0 6.3-2.8 6.3-6.3V6h6.5Z" fill="#25F4EE"/>
-                    <path d="M31.5 4v25.9c0 7.2-5.1 12.3-12.3 12.3-2.5 0-4.8-.7-6.7-2v-7.1c1.4 1.2 3.2 2 5.2 2 3.5 0 6.3-2.8 6.3-6.3V4h7.5Z" fill="#FE2C55"/>
-                    <path d="M25.5 4v25.9c0 3.5-2.8 6.3-6.3 6.3-2 0-3.8-.8-5.2-2V19.7h6.5v-6.1h-6.5V4h11.5Z" fill="#fff"/>
+                    <path d="M168.5 32c2.1 18.6 15.7 49.6 49.3 52.2v24.7c-14.4 1.2-28.7-0.6-42.1-5.1v56.9c0 31.1-22.1 53.2-53.2 53.2-10.8 0-21.1-2.9-29.7-8.2v-30.7c6.2 5.2 14.1 8.2 22.7 8.2 15.2 0 27.2-12 27.2-27.2V32h26.1Z" fill="#25F4EE"/>
+                    <path d="M160.5 24v111.7c0 31.1-22.1 53.2-53.2 53.2-10.8 0-21.1-2.9-29.7-8.2v-30.7c6.2 5.2 14.1 8.2 22.7 8.2 15.2 0 27.2-12 27.2-27.2V24h33Z" fill="#FE2C55"/>
+                    <path d="M128.5 24v111.7c0 15.2-12 27.2-27.2 27.2-8.6 0-16.5-3-22.7-8.2V79.7h27.2V55h-27.2V24h49.9Z" fill="#fff"/>
                   </g>
                 </svg>
               </span>
