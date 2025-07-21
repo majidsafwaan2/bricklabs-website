@@ -146,8 +146,8 @@ export default function Home() {
           <p className="text-xl text-gray-600 mb-12">Check us out on TikTok</p>
           <div className="flex justify-center gap-8">
             <a href="https://www.tiktok.com/@bricklabclips" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-600 hover:text-primary-red transition-colors">
-              <span className="w-10 h-10 flex items-center justify-center rounded-full bg-black">
-                <span className="text-white text-2xl font-bold">T</span>
+              <span className="w-8 h-8 flex items-center justify-center rounded-full bg-black">
+                <span className="text-white text-xl font-bold">T</span>
               </span>
               <span>TikTok</span>
             </a>
