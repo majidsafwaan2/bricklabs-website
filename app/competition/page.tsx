@@ -292,7 +292,7 @@ export default function Competition() {
               <div className="card">
                 <h2 className="text-2xl font-bold mb-6">Submit Your Entry</h2>
                 
-                <form className="space-y-6 flex flex-col w-full">
+                <form className="space-y-6 flex flex-col w-full md:w-3/4 mx-auto">
                   <div className="flex flex-col w-full">
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Full Name *
@@ -413,7 +413,7 @@ export default function Competition() {
                   </div>
                   <button
                     type="submit"
-                    className="w-full btn-primary"
+                    className="w-full md:w-auto md:self-start btn-primary"
                   >
                     Submit Entry
                   </button>

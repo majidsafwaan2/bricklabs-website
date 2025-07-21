@@ -27,7 +27,9 @@ describe('Header', () => {
     fireEvent.click(menuButton)
     
     // Mobile menu should be visible
-    expect(screen.getByText('Home')).toBeInTheDocument()
+    // There are multiple 'Home' links, so use getAllByText and check at least one is visible
+    const homeLinks = screen.getAllByText('Home')
+    expect(homeLinks.length).toBeGreaterThan(0)
     
     // Click again to close
     fireEvent.click(menuButton)
@@ -39,10 +41,11 @@ describe('Header', () => {
     const menuButton = screen.getByRole('button')
     fireEvent.click(menuButton)
     
-    const homeLink = screen.getByText('Home')
-    fireEvent.click(homeLink)
+    // Use getAllByText and click the first mobile nav link
+    const homeLinks = screen.getAllByText('Home')
+    fireEvent.click(homeLinks[0])
     
     // Menu should close after clicking a link
-    expect(homeLink).toBeInTheDocument()
+    expect(homeLinks[0]).toBeInTheDocument()
   })
 }) 

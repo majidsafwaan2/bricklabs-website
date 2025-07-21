@@ -84,6 +84,7 @@ export default function Forum() {
   const [newPost, setNewPost] = useState({ title: '', content: '', category: 'general' })
   const [replyContent, setReplyContent] = useState('')
   const [replyTo, setReplyTo] = useState<string | null>(null)
+  const [showAuthModal, setShowAuthModal] = useState(false)
 
   const categories = [
     { id: 'all', name: 'All Topics', color: 'bg-gray-500' },
@@ -139,6 +140,16 @@ export default function Forum() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Auth Modal */}
+      {showAuthModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg shadow-lg p-8 max-w-sm w-full text-center">
+            <h2 className="text-xl font-bold mb-4">Sign Up / Join Community</h2>
+            <p className="mb-6">This is a placeholder for authentication. Real sign up coming soon!</p>
+            <button className="btn-primary w-full" onClick={() => setShowAuthModal(false)}>Close</button>
+          </div>
+        </div>
+      )}
       {/* Header */}
       <div className="bg-white shadow-sm border-b border-gray-200">
         <div className="container mx-auto px-4 py-8">
@@ -149,11 +160,10 @@ export default function Forum() {
                 Connect with fellow builders, share your projects, and get help
               </p>
             </div>
-            
             {!isLoggedIn ? (
               <div className="flex gap-3">
-                <button className="btn-secondary">Sign In</button>
-                <button className="btn-primary">Join Community</button>
+                <button className="btn-secondary" onClick={() => setShowAuthModal(true)}>Sign In</button>
+                <button className="btn-primary" onClick={() => setShowAuthModal(true)}>Join Community</button>
               </div>
             ) : (
               <button className="btn-primary flex items-center gap-2">
